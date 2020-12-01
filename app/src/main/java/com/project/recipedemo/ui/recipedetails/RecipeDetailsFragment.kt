@@ -62,6 +62,24 @@ class RecipeDetailsFragment : BaseFragment<FragmentRecipeDetailsBinding, RecipeD
         initRecyclerViews()
         initSpinner()
         binding.ivFood.setImageBitmap(BitmapFactory.decodeFile(recipe.image))
+
+        compositeDisposable.add(mViewModel.observableAction.subscribe {
+            when (it) {
+                is RecipeDetailsViewModel.Event.FocusIngredientEditText -> {
+                    binding.edtIngredient.requestFocus()
+                }
+                is RecipeDetailsViewModel.Event.FocusStepEditText -> {
+                    binding.edtStep.requestFocus()
+                }
+                is RecipeDetailsViewModel.Event.NotEnoughInfo -> {
+                    Toast.makeText(context!!, "Please enter full information!", Toast.LENGTH_LONG)
+                        .show()
+                }
+                RecipeDetailsViewModel.Event.OnBackPressed -> {
+                    activity!!.onBackPressed()
+                }
+            }
+        })
     }
 
     private fun initValueVariable() {
@@ -121,24 +139,6 @@ class RecipeDetailsFragment : BaseFragment<FragmentRecipeDetailsBinding, RecipeD
                 pickImageFromGallery()
             }
         }
-
-        compositeDisposable.add(mViewModel.observableAction.subscribe {
-            when (it) {
-                is RecipeDetailsViewModel.Event.FocusIngredientEditText -> {
-                    binding.edtIngredient.requestFocus()
-                }
-                is RecipeDetailsViewModel.Event.FocusStepEditText -> {
-                    binding.edtStep.requestFocus()
-                }
-                is RecipeDetailsViewModel.Event.NotEnoughInfo -> {
-                    Toast.makeText(context!!, "Please enter full information!", Toast.LENGTH_LONG)
-                        .show()
-                }
-                RecipeDetailsViewModel.Event.OnBackPressed -> {
-                    activity!!.onBackPressed()
-                }
-            }
-        })
     }
 
     private fun initSpinner() {
