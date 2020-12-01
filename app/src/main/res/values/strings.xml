@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Recipe App</string>
+
+    <string name="label_ingredients">Ingredients:</string>
+    <string name="label_steps">Steps:</string>
+    <string name="label_food_name">Food\'s name:</string>
+    <string name="label_recipe_types">Recipe Types:</string>
+
+    <string name="label_btn_add">Add</string>
+    <string name="label_btn_edit">Update</string>
+</resources>

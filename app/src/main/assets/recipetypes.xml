@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<records>
+    <recipetype>
+        <id>1</id>
+        <title>All</title>
+    </recipetype>
+
+    <recipetype>
+        <id>2</id>
+        <title>Breakfast</title>
+    </recipetype>
+
+    <recipetype>
+        <id>3</id>
+        <title>Lunch</title>
+    </recipetype>
+
+    <recipetype>
+        <id>4</id>
+        <title>Dinner</title>
+    </recipetype>
+
+    <recipetype>
+        <id>5</id>
+        <title>Cakes</title>
+    </recipetype>
+
+    <recipetype>
+        <id>6</id>
+        <title>Soups</title>
+    </recipetype>
+</records>
